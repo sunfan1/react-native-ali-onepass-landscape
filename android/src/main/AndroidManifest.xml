@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.ali.onepass">
     <application>
-        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.mobile.auth.gatewayauth.LoginAuthActivity" android:screenOrientation="behind" android:theme="@style/authsdk_dialog"/>
-        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.mobile.auth.gatewayauth.PrivacyDialogActivity" android:screenOrientation="behind" android:theme="@style/authsdk_activity_dialog"/>
-        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity" android:screenOrientation="behind"/>
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.mobile.auth.gatewayauth.LoginAuthActivity" android:screenOrientation="userLandscape" android:theme="@style/authsdk_dialog"/>
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.mobile.auth.gatewayauth.PrivacyDialogActivity" android:screenOrientation="userLandscape" android:theme="@style/authsdk_activity_dialog"/>
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity" android:screenOrientation="userLandscape"/>
     </application>
 </manifest>
 
