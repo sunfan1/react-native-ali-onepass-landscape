@@ -387,6 +387,8 @@ RCT_EXPORT_METHOD(setUIConfig:(NSDictionary *)config resolve:(RCTPromiseResolveB
 RCT_EXPORT_METHOD(setDialogUIConfig:(NSDictionary *)config resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
     NSLog(@"config = %@", config);
     tXCustomModel = [[TXCustomModel alloc] init];
+    // 仅支持横屏
+    tXCustomModel.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscape;
     tXCustomModel.alertCornerRadiusArray = @[@10, @10, @10, @10];
     // 状态栏
     NSString *statusBarHidden = [config objectForKey:[self methodName2KeyName:@"setStatusBarHidden"]];
@@ -398,15 +400,15 @@ RCT_EXPORT_METHOD(setDialogUIConfig:(NSDictionary *)config resolve:(RCTPromiseRe
 
     CGFloat ratio = MAX(TX_SCREEN_WIDTH, TX_SCREEN_HEIGHT) / 667.0;
     tXCustomModel.contentViewFrameBlock = ^CGRect(CGSize screenSize, CGSize contentSize, CGRect frame) {
-        CGFloat alertX = 0;
-        CGFloat alertY = 0;
+        CGFloat alertX = 260;
+        CGFloat alertY = 30;
         CGFloat alertWidth = 0;
         CGFloat alertHeight = 0;
 
         if ([self isHorizontal:screenSize]) {
-            alertX = ratio * TX_Alert_Horizontal_Default_Left_Padding;
+//            alertX = ratio * TX_Alert_Horizontal_Default_Left_Padding;
             alertWidth = screenSize.width - alertX * 2;
-            alertY = (screenSize.height - alertWidth * 0.5) * 0.5;
+//            alertY = (screenSize.height - alertWidth * 0.5) * 0.5;
             alertHeight = screenSize.height - 2 * alertY;
         } else {
             alertX = TX_Alert_Default_Left_Padding * ratio;
